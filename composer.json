@@ -1,0 +1,22 @@
+{
+    "name": "asaurusedu/asadu-php",
+    "description": "Asaurus Edu Frontend Client App",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Asaurusedu\\AsaduPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rengga Prakoso Nugroho",
+            "email": "rengga.prakoso@gmail.com"
+        }
+    ],
+    "scripts": {
+        "cs-fixer": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src",
+        "lint": "yarn run prettier && composer run cs-fixer"
+    },
+    "require": {}
+}
