@@ -1,7 +1,7 @@
 name: 🚀 Deploy website on push
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 jobs:
@@ -40,5 +40,5 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./src/
-          dry-run: false
+          dry-run: true
       
