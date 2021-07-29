@@ -15,8 +15,10 @@
         }
     ],
     "scripts": {
-        "cs-fixer": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src",
+        "cs-fixer": "php-cs-fixer fix src",
         "lint": "yarn run prettier && composer run cs-fixer"
     },
-    "require": {}
+    "require": {
+        "friendsofphp/php-cs-fixer": "^3.0"
+    }
 }

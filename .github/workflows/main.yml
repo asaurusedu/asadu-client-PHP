@@ -1,4 +1,4 @@
-name: 🚀 Deploy website on push
+name: 🚀 Code Linting Check
 
 on:
   push:
