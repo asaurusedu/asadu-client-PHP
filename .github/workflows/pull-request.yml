@@ -1,12 +1,12 @@
-name: 🚀 Deploy website on push to Cloudhosting
+name: 🚀 Pull Request Test Unit
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 jobs:
-  deploy:
-    name: Deploy to Cloudhosting
+  test-unit:
+    name: Code Linting Check
     runs-on: ubuntu-latest
     
     steps:
@@ -40,5 +40,5 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./src/
-          dry-run: false
+          dry-run: true
       
