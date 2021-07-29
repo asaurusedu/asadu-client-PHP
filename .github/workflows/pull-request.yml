@@ -1,12 +1,12 @@
-name: 🚀 Deploy website on push
+name: 🚀 Pull Request Test Unit
 
 on:
   pull_request:
     branches: [ main ]
 
 jobs:
-  deploy:
-    name: Deploy to Cloudhosting
+  test-unit:
+    name: Code Linting Check
     runs-on: ubuntu-latest
     
     steps:

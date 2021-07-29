@@ -1,4 +1,4 @@
-name: 🚀 Code Linting Check
+name: 🚀 Deploy website on push to Cloudhosting
 
 on:
   push:
