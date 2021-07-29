@@ -1,0 +1,4 @@
+/vendor/
+/tools/**/*
+node_modules/
+**.cache
