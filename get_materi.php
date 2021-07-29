@@ -5,7 +5,7 @@
  
 	echo "<option value=''>Pilih Materi</option>";
  
-	$query = "SELECT * FROM materi WHERE id_matpel='$matpel' AND id_kelas='$kelas'";
+	$query = "SELECT * FROM list_materi WHERE id_matpel='$matpel' AND id_kelas='$kelas'";
 	$dewan1 = $db1->prepare($query);
 	$dewan1->execute();
 	$res1 = $dewan1->get_result();
