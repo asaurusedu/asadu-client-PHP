@@ -21,7 +21,7 @@ SET time_zone = "+07:00";
 -- Database: `asaurus_form`
 --
 CREATE DATABASE IF NOT EXISTS `asauruse_form` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `asaurus_form`;
+USE `asauruse_form`;
 
 -- --------------------------------------------------------
 
