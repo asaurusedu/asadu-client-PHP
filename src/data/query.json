@@ -1,0 +1,12 @@
+[
+  {
+    "type": "POST",
+    "url": "get_kelas.php",
+    "target": "kelas"
+  },
+  {
+    "type": "POST",
+    "url": "get_matpel.php",
+    "target": "matpel"
+  }
+]
