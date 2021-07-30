@@ -1,6 +1,6 @@
 <?php
 
-include "koneksi.php";
+include "../config/db-connection.php";
 
 $formdata = [];
 $list_kelas = [];

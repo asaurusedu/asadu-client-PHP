@@ -1,6 +1,7 @@
 <?php
 
-include "koneksi.php";
+include "../config/db-connection.php";
+
 $matpel = $_POST["matpel"];
 $kelas = $_POST["kelas"];
 

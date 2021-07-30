@@ -3,7 +3,7 @@ function getMateri() {
   var kelas = $("#kelas").val();
   $.ajax({
     type: "POST",
-    url: "get_materi.php",
+    url: "libs/get_materi.php",
     data: {
       matpel: matpel,
       kelas: kelas,
@@ -18,7 +18,7 @@ function getMateri() {
 function getFormData() {
   $.ajax({
     type: "POST",
-    url: "get_formdata.php",
+    url: "libs/get_formdata.php",
     cache: false,
     success: function (msg) {
       let data = JSON.parse(msg);
