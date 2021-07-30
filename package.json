@@ -4,6 +4,6 @@
     "prettier": "^2.3.2"
   },
   "scripts": {
-    "prettier": "prettier --write src/**/*.php"
+    "prettier": "prettier --write src/**/*"
 }
 }
