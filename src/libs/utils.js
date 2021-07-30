@@ -15,23 +15,6 @@ function getMateri() {
   });
 }
 
-// function getFormData() {
-//   fetch("./data/query.json")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       for (let current = 0; current < data.length; current++) {
-//         $.ajax({
-//           type: data[current].type,
-//           url: data[current].url,
-//           success: function (msg) {
-//             $("#" + data[current].target).html(msg);
-//             console.log(msg);
-//           },
-//         });
-//       }
-//     });
-// }
-
 function getFormData() {
   $.ajax({
     type: "POST",
