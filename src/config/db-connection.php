@@ -1,6 +1,5 @@
 <?php
 
-
 $HOST = "localhost";
 $USER = "asauruse_asaduclient";
 $PASS = "ln54aJ)VI^B]";
