@@ -1,15 +1,16 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 29, 2021 at 05:22 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.8
+-- Host: localhost:3306
+-- Generation Time: Aug 04, 2021 at 06:05 PM
+-- Server version: 10.2.39-MariaDB-log-cll-lve
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
-SET time_zone = "+07:00";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,10 +19,8 @@ SET time_zone = "+07:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `asaurus_form`
+-- Database: `asauruse_form`
 --
-CREATE DATABASE IF NOT EXISTS `asauruse_form` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `asauruse_form`;
 
 -- --------------------------------------------------------
 
@@ -45,6 +44,19 @@ INSERT INTO `list_kelas` (`id_kelas`, `nama_kelas`) VALUES
 ('kelas-10', 'Kelas 10'),
 ('kelas-11', 'Kelas 11'),
 ('kelas-12', 'Kelas 12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `list_linkmateri`
+--
+
+CREATE TABLE `list_linkmateri` (
+  `id_linkmateri` varchar(50) NOT NULL,
+  `id_materi` varchar(50) NOT NULL,
+  `jenis_media` varchar(100) NOT NULL,
+  `link_media` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -120,6 +132,12 @@ INSERT INTO `list_materi` (`id_materi`, `nama_materi`, `id_kelas`, `id_matpel`) 
 --
 ALTER TABLE `list_kelas`
   ADD PRIMARY KEY (`id_kelas`);
+
+--
+-- Indexes for table `list_linkmateri`
+--
+ALTER TABLE `list_linkmateri`
+  ADD PRIMARY KEY (`id_linkmateri`);
 
 --
 -- Indexes for table `list_matapelajaran`

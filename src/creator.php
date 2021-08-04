@@ -38,15 +38,12 @@
         </select>
       </div>
 
-      <div class="form-group" style="margin: 10px 10px 10px 10px">
-        <label>Materi</label>
-        <select class="form-control" name="materi" id="materi">
-          <option value="">Pilih Materi</option>
-        </select>
-      </div>
+      <input class="form-control" id="tujuan" style="margin: 10px 10px 10px 10px" placeholder="Inputkan Nama Materi" />
+
+      <input class="form-control" id="tujuan" style="margin: 10px 10px 10px 10px" placeholder="Inputkan Link Materi" />
     </div>
 
-    <button class="btn-warning" type="button">SELANJUTNYA</button>
+    <button class="btn-warning" type="button">Click Me!</button>
   </div>
 
   <script src="libs/utils.js"></script>
