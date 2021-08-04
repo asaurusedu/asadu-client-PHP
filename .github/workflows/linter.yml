@@ -30,6 +30,8 @@ jobs:
         env:
           IGNORE_GITIGNORED_FILES: TRUE
           VALIDATE_ALL_CODEBASE: TRUE
+          VALIDATE_PHP_PSALM: FALSE
+          VALIDATE_PHP_PHPSTAN: FALSE
           JAVASCRIPT_DEFAULT_STYLE: prettier
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
