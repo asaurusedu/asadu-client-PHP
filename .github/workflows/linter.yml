@@ -13,6 +13,11 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
         
+      - name: Install Composer
+        uses: docker://composer
+        with:
+          args: install
+        
       - name: Linting Codebase
         uses: docker://ghcr.io/github/super-linter:slim-v4
         env:
@@ -24,3 +29,4 @@ jobs:
           VALIDATE_SQL: TRUE
           JAVASCRIPT_DEFAULT_STYLE: prettier
           DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
