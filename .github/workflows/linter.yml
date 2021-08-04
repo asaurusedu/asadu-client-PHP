@@ -12,11 +12,9 @@ jobs:
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
-        
-      - name: Install Composer
-        uses: docker://composer:latest
-        with:
-          args: install
+          
+      - name: Install Composer and PHP 7.4
+        uses: php-actions/composer@v6
         
       - name: Linting Codebase
         uses: docker://ghcr.io/github/super-linter:slim-v4
