@@ -23,16 +23,13 @@ jobs:
         uses: php-actions/composer@master
         with:
           php_version: 8.0
+          version: 2
         
       - name: Linting Codebase
         uses: docker://ghcr.io/github/super-linter:slim-v4
         env:
           IGNORE_GITIGNORED_FILES: TRUE
-          VALIDATE_PHP_PSALM: TRUE
-          VALIDATE_JAVASCRIPT_ES: TRUE
-          VALIDATE_JSON: TRUE
-          VALIDATE_HTML: TRUE
-          VALIDATE_SQL: TRUE
+          VALIDATE_ALL_CODEBASE: TRUE
           JAVASCRIPT_DEFAULT_STYLE: prettier
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
