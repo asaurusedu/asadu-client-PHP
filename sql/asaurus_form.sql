@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Aug 04, 2021 at 06:05 PM
--- Server version: 10.2.39-MariaDB-log-cll-lve
--- PHP Version: 7.3.28
+-- Host: 127.0.0.1
+-- Generation Time: Aug 15, 2021 at 07:42 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -21,6 +20,73 @@ SET time_zone = "+00:00";
 --
 -- Database: `asauruse_form`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `akun_guru`
+--
+
+CREATE TABLE `akun_guru` (
+  `id_guru` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `nama_lengkap` varchar(100) NOT NULL,
+  `jabatan` varchar(50) NOT NULL,
+  `matpel_utama` varchar(100) NOT NULL,
+  `tingkatan_ajar` varchar(100) NOT NULL,
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `akun_guru`
+--
+
+INSERT INTO `akun_guru` (`id_guru`, `email`, `password`, `nama_lengkap`, `jabatan`, `matpel_utama`, `tingkatan_ajar`, `created_at`) VALUES
+('cEsqIZUsAa', 'kepsek@gmail.com', 'kepsek23', 'kepsekya', 'Kepala Sekolah', 'mat', 'kelas-10', '2021-08-15 16:59:59.000000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `akun_sekolah`
+--
+
+CREATE TABLE `akun_sekolah` (
+  `npsn_sekolah` int(50) NOT NULL,
+  `nama_sekolah` varchar(100) NOT NULL,
+  `nama_kepsek` varchar(100) NOT NULL,
+  `jenis_sekolah` varchar(50) NOT NULL,
+  `status_sekolah` varchar(50) NOT NULL,
+  `kabupaten` varchar(50) NOT NULL,
+  `kecamatan` varchar(50) NOT NULL,
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `akun_sekolah`
+--
+
+INSERT INTO `akun_sekolah` (`npsn_sekolah`, `nama_sekolah`, `nama_kepsek`, `jenis_sekolah`, `status_sekolah`, `kabupaten`, `kecamatan`, `created_at`) VALUES
+(456, 'SMP AJAIB', 'Pak Bapak', 'Negeri', 'Aktif', 'Kauman', 'Klojen', '2021-08-15 16:59:59.000000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `list_jabatan`
+--
+
+CREATE TABLE `list_jabatan` (
+  `id_jabatan` int(50) NOT NULL,
+  `nama_jabatan` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `list_jabatan`
+--
+
+INSERT INTO `list_jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
+(1, 'Tenaga Pendidik'),
+(2, 'Kepala Sekolah');
 
 -- --------------------------------------------------------
 
@@ -55,8 +121,16 @@ CREATE TABLE `list_linkmateri` (
   `id_linkmateri` varchar(50) NOT NULL,
   `id_materi` varchar(50) NOT NULL,
   `jenis_media` varchar(100) NOT NULL,
-  `link_media` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `link_media` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `list_linkmateri`
+--
+
+INSERT INTO `list_linkmateri` (`id_linkmateri`, `id_materi`, `jenis_media`, `link_media`) VALUES
+('1', '07-bindo-05', 'PPT', '<iframe src=\"https://docs.google.com/presentation/d/e/2PACX-1vT4UNV-SVPh3-6kyyStZDFjIZuXV2W68r6xxTNXK7K4wGnXfcIFenTvhYEQQLJ8bw/embed?start=false&loop=false&delayms=6000000\" frameborder=\"0\" width=\"800\" height=\"300\" allowfullscreen=\"true\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\"></iframe>'),
+('2', '07-bindo-05', 'video', 'youtube');
 
 -- --------------------------------------------------------
 
@@ -128,6 +202,24 @@ INSERT INTO `list_materi` (`id_materi`, `nama_materi`, `id_kelas`, `id_matpel`) 
 --
 
 --
+-- Indexes for table `akun_guru`
+--
+ALTER TABLE `akun_guru`
+  ADD PRIMARY KEY (`id_guru`);
+
+--
+-- Indexes for table `akun_sekolah`
+--
+ALTER TABLE `akun_sekolah`
+  ADD PRIMARY KEY (`npsn_sekolah`);
+
+--
+-- Indexes for table `list_jabatan`
+--
+ALTER TABLE `list_jabatan`
+  ADD PRIMARY KEY (`id_jabatan`);
+
+--
 -- Indexes for table `list_kelas`
 --
 ALTER TABLE `list_kelas`
@@ -152,6 +244,16 @@ ALTER TABLE `list_materi`
   ADD PRIMARY KEY (`id_materi`),
   ADD KEY `id_kelas` (`id_kelas`),
   ADD KEY `id_matpel` (`id_matpel`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `list_jabatan`
+--
+ALTER TABLE `list_jabatan`
+  MODIFY `id_jabatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
